@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+<h2>Login Confirmation</h2>
+
+<div class="conftext">
+    <p1>
+        <b>Username:</b><br /> @ViewBag.Username <br />
+        <b>Color Selected:</b><br /> @ViewBag.Color <br />
+        <b>What you're listening to:</b><br /> @ViewBag.Listen <br />
+
+    </p1></div>
+    <form action="/Home/Welcome">
+        <input type="hidden" name="input" value="@ViewBag.Username" />
+        <input type="submit" value="Register" />
+        </form>
