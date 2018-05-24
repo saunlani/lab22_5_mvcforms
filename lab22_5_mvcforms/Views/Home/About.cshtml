@@ -1,7 +1,45 @@
-﻿@{
-    ViewBag.Title = "About";
-}
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+﻿
+<script>
+    var sessionVal = '@Session["Color"]';
+    if (sessionVal == "Red") {
+        document.body.style.backgroundColor = "red";
+    }
+    if (sessionVal == "Yellow") {
+        document.body.style.backgroundColor = "yellow";
+    }
+    if (sessionVal == "Blue") {
+        document.body.style.backgroundColor = "blue";
+        }
 
-<p>Use this area to provide additional information.</p>
+
+
+    var usersession = '@Session["Username"]';
+    var colorsession = '@Session["Color"]';
+    var listensession = '@Session["Listen"]';
+    var fontsession = '@Session["Font"]';
+
+    function populate() {
+        document.getElementById('_username').value = usersession;
+        document.getElementById('_color').value = colorsession;
+        document.getElementById('_listen').value = listensession;
+        document.getElementById('_font').value = listensession;
+    }
+    window.onload = populate;
+
+        var sessionFont = '@Session["Font"]';
+    if (sessionFont == "Impact") {
+        document.body.style.fontFamily = "Impact,Charcoal,sans-serif";
+    }
+    if (sessionFont == "Lucida") {
+        document.body.style.backgroundColor = "Lucida Sans Unicode"
+    }
+</script>
+    @{
+        ViewBag.Title = "About";
+    }<div class="jumbotron">
+        <h2>@ViewBag.Title.</h2>
+        <h3>@ViewBag.Message</h3>
+        <div class="jumbotron">
+
+            <p>Use this area to provide additional information.</p>
+        </div>

@@ -1,17 +1,53 @@
-﻿@{
-    ViewBag.Title = "Contact";
-}
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+﻿
+<script>
+    var sessionVal = '@Session["Color"]';
+    if (sessionVal == "Red") {
+        document.body.style.backgroundColor = "red";
+    }
+    if (sessionVal == "Yellow") {
+        document.body.style.backgroundColor = "yellow";
+    }
+    if (sessionVal == "Blue") {
+        document.body.style.backgroundColor = "blue";
+        }
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+
+    var usersession = '@Session["Username"]';
+    var colorsession = '@Session["Color"]';
+    var listensession = '@Session["Listen"]';
+    var fontsession = '@Session["Font"]';
+
+    function populate() {
+        document.getElementById('_username').value = usersession;
+        document.getElementById('_color').value = colorsession;
+        document.getElementById('_listen').value = listensession;
+        document.getElementById('_font').value = listensession;
+    }
+    window.onload = populate;
+        var sessionFont = '@Session["Font"]';s
+    if (sessionFont == "Impact") {
+        document.body.style.fontFamily = "Impact,Charcoal,sans-serif";
+    }
+    if (sessionFont == "Lucida") {
+        document.body.style.backgroundColor = "Lucida Sans Unicode"
+    }
+</script>
+    @{
+        ViewBag.Title = "Contact";
+    }
+    <h2>@ViewBag.Title.</h2>
+    <h3>@ViewBag.Message</h3>
+    <div class="jumbotron">
+        <address>
+            One Microsoft Way<br />
+            Redmond, WA 98052-6399<br />
+            <abbr title="Phone">P:</abbr>
+            425.555.0100
+        </address>
+
+        <address>
+            <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+            <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+        </address>
+    </div>

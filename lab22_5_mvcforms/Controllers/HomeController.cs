@@ -29,16 +29,18 @@ namespace lab22_5_mvcforms.Controllers
 
 
         public ActionResult Login(string _username, string _color,
-        string _listen)
+        string _listen, string _font)
         {
             ViewBag.Username = _username;
             ViewBag.Color = _color;
             ViewBag.Listen = _listen;
+            ViewBag.Font = _font;
 
 
             Session["Username"] = _username;
             Session["Color"] = _color;
             Session["Listen"] = _listen;
+            Session["Font"] = _font;
             return View();
         }
 
